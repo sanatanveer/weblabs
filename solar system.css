@@ -1,0 +1,161 @@
+
+body {
+	background-image: url("ss.jpg")
+}
+#sun {
+	 position: relative;
+  top: 300px;
+  left: 600px;
+  
+  width: 500px;
+}
+#mercury {
+  width: 500px;
+  height: 250px;
+  margin: 30px auto;
+}
+
+.circle-container {
+  margin: 0 auto;
+  position: relative;
+  width: 440px;
+  height: 440px;
+  background: transparent;
+  -webkit-animation: rotation 6s linear 0s infinite normal none;
+  -moz-animation: rotation 6s linear 0s infinite normal none;
+  -ms-animation: rotation 6s linear 0s infinite normal none;
+  -o-animation: rotation 6s linear 0s infinite normal none;
+  animation: rotation 6s linear 0s infinite normal none;
+}
+.circle {
+  position: absolute;
+  top: 170px;
+  left: 170px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+/* For mercury */
+.circle:nth-child(1) {
+  -webkit-transform: rotate(20deg) translateX(120px);
+  -moz-transform: rotate(20deg) translateX(100px);
+  -ms-transform: rotate(20deg) translateX(120px);
+  -o-transform: rotate(20deg) translateX(100px);
+  transform: rotate(0deg) translateX(120px);
+  background: #808080;
+}
+/* For Venus */
+.circle:nth-child(2) {
+  -webkit-transform: rotate(100deg) translateX(150px);
+  -moz-transform: rotate(100deg) translateX(150px);
+  -ms-transform: rotate(100deg) translateX(150px);
+  -o-transform: rotate(100deg) translateX(150px);
+  transform: rotate(deg) translateX(190px);
+  background: #CCCC00;
+}
+/* For Earth */
+.circle:nth-child(3) {
+  -webkit-transform: rotate(244deg) translateX(250px);
+  -moz-transform: rotate(244deg) translateX(250px);
+  -ms-transform: rotate(244deg) translateX(250px);
+  -o-transform: rotate(244deg) translateX(250px);
+  transform: rotate(244deg) translateX(250px);
+  background: #50dc64;
+}
+/* Mars */
+.circle:nth-child(4) {
+  -webkit-transform: rotate(316deg) translateX(250px);
+  -moz-transform: rotate(316deg) translateX(250px);
+  -ms-transform: rotate(316deg) translateX(250px);
+  -o-transform: rotate(316deg) translateX(250px);
+  transform: rotate(316deg) translateX(250px);
+  background: #41c39d;
+}
+/* For Jupiter */
+.circle:nth-child(5) {
+  -webkit-transform: rotate(388deg) translateX(300px);
+  -moz-transform: rotate(388deg) translateX(300px);
+  -ms-transform: rotate(388deg) translateX(300px);
+  -o-transform: rotate(388deg) translateX(300px);
+  transform: rotate(388deg) translateX(300px);
+  background: #4db5dc;
+}
+/* For Saturn */
+.circle:nth-child(6) {
+  -webkit-transform: rotate(488deg) translateX(330px);
+  -moz-transform: rotate(488deg) translateX(330px);
+  -ms-transform: rotate(488deg) translateX(330px);
+  -o-transform: rotate(488deg) translateX(330px);
+  transform: rotate(488deg) translateX(330px);
+  background: #800000;
+}
+/* For Uranus */
+.circle:nth-child(7) {
+  -webkit-transform: rotate(588deg) translateX(430px);
+  -moz-transform: rotate(588deg) translateX(430px);
+  -ms-transform: rotate(588deg) translateX(430px);
+  -o-transform: rotate(588deg) translateX(430px);
+  transform: rotate(588deg) translateX(430px);
+  background: #FF0000;
+}
+/* For Neptune */
+.circle:nth-child(8) {
+  -webkit-transform: rotate(688deg) translateX(530px);
+  -moz-transform: rotate(688deg) translateX(530px);
+  -ms-transform: rotate(688deg) translateX(530px);
+  -o-transform: rotate(688deg) translateX(530px);
+  transform: rotate(688deg) translateX(530px);
+  background: #008000;
+}
+/* For Pluto */
+.circle:nth-child(9) {
+  -webkit-transform: rotate(788deg) translateX(630px);
+  -moz-transform: rotate(788deg) translateX(630px);
+  -ms-transform: rotate(788deg) translateX(630px);
+  -o-transform: rotate(788deg) translateX(630px);
+  transform: rotate(788deg) translateX(630px);
+  background: #008080;
+}
+/* Animations */
+/*************************************************/
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotation {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotation {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotation {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
