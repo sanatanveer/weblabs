@@ -1,0 +1,228 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="new 2.css">
+<!---Number 1. CSS for hovering-->
+
+<style>
+a:hover {
+    background-color: yellow;
+}
+</style>
+
+</head>
+<body class="opening hide-UI view-2D zoom-large data-close controls-close">
+    
+	<!-----Number 2. References of pages of planets and quiz-->
+	
+ <ul>
+
+  <li><a href="mercury.html" target = "_blank">Mercury</a></li>
+
+	<li> <a href="venus.html" target = "_blank">Venus</a></li>
+	  <li><a href="earth.html" target = "_blank">Earth</a></li>
+	   <li><a href="mars.html" target = "_blank">Mars</a></li>
+	    <li><a href="jupiter.html" target = "_blank">Jupiter</a></li>
+		 <li><a href="saturn.html" target = "_blank">Saturn</a></li>
+		  <li><a href="uranus.html" target = "_blank">Uranus</a></li>
+		   <li><a href="neptune.html" target = "_blank">Neptune</a></li>
+		    <li><a href="pluto.html" target = "_blank">Pluto</a></li>
+			<li><a href="quiz.html" target = "_blank">QUIZ</a></li>
+			
+</ul>	   
+   
+   <!--------The different divs--->
+    <div id="theuniverse" class="ss">
+    
+	<div id="thegalaxy">
+
+	<div id="the-solar-system" class="earth">
+	<!-----Mercury--->
+
+	<div id="mercury" class="path">
+
+	<div class="theposition">
+
+	<div class="planet">
+              
+                 
+
+                  <dd><span></span></dd> 
+				  <!-------The difference between span and div is that a span element is in-line 
+				  and usually used for a small chunk of HTML inside a line (such as inside a paragraph) 
+				  whereas a div (division) element is block-line (which is basically equivalent to having a line-break before and after it) 
+				  and used to group larger chunks of code.----
+				  ---------->
+             
+			 </div>
+
+			 </div>
+
+			 </div>
+			 <!-----venus------->
+
+			 <div id="venus" class="path">
+
+			 <div class="theposition">
+
+			 <div class="planet">
+                
+                 
+
+                  <dd><span></span></dd>
+               
+              </div>
+
+			  </div>
+
+			  </div>
+			  <!-----Eart-->
+
+			  <div id="earth" class="path">
+
+			  <div class="theposition">
+
+              <div class="path">
+
+			  <div class="theposition">
+			  <!-----Moon of Earth----->
+
+			  <div class="moon"></div>
+
+			  </div>
+
+              </div>
+
+              <div class="planet">
+               
+                  
+
+                  <dd><span></span></dd>
+             
+			 </div>
+
+			 </div>
+
+			 </div>
+   <!--Mars---->
+			 <div id="mars" class="path">
+
+			 <div class="theposition">
+
+			 <div class="planet">
+               
+                  
+
+                  <dd><span></span></dd>
+             
+              </div>
+
+			  </div>
+
+			  </div>
+			  <!---Jupiter--->
+
+			  <div id="jupiter" class="path">
+
+			  <div class="theposition">
+
+              <div class="planet">
+                
+                  
+
+                  <dd><span></span></dd>
+             
+              </div>
+
+			  </div>
+
+			  </div>
+			  <!----Saturn----->
+
+			  <div id="saturn" class="path">
+
+			  <div class="theposition">
+
+              <div class="planet">
+                
+                
+				
+
+				<dd><span></span></dd>
+           
+              </div>
+
+			  </div>
+
+			  </div>
+			  <!----Uranus----->
+
+			  <div id="uranus" class="path">
+
+			  <div class="theposition">
+
+              <div class="planet">
+              
+			 
+
+			  <dd><span></span></dd>
+             
+              </div>
+
+			  </div>
+
+			  </div>
+			  <!-----Neptune---->
+
+			  <div id="neptune" class="path">
+
+			  <div class="theposition">
+
+              <div class="planet">
+               
+                  
+
+                  <dd><span></span></dd>
+           
+              </div>
+
+			  </div>
+
+			  </div>
+			  <!-----Pluto-->
+		  
+		  <div id="pluto" class="path">
+
+		  <div class="theposition">
+
+		  <div class="planet">
+              
+                  <dt>Pluto</dt>
+
+                  <dd><span></span></dd>
+              
+              </div>
+
+			  </div>
+
+			  </div>
+		  
+          <div id="sun">
+          
+              <dt>Sun</dt>
+
+              <dd><span></span></dd>
+        
+          </div>
+
+		  </div>
+
+		  </div>
+
+		  </div>
+
+		  
+
+   
+	</body>
+
+	</html>
