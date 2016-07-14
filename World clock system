@@ -1,0 +1,205 @@
+
+<html>
+<body>
+<!------The HTML <canvas> element is used to draw graphics,
+
+on the fly, via scripting (usually JavaScript). 
+The <canvas> element is only a container for graphics. 
+You must use a script to actually draw the graphics. 
+Canvas has several methods for drawing paths, 
+boxes, circles, text, and adding images.----->
+<canvas id="clock_canvas" 
+style="background-color:#D98880"
+width="400" height="400"   
+ >
+</canvas>
+
+<table  width="300"  cellpadding="4">
+<form name="where">
+  <tr>
+    <td width="99.99%">
+<select name="city" size="1" onchange="updateclock(this);"> 
+<option value="" selected>Local time</option>
+<option value="0">Hong Kong</option> 
+<option value="1">Paris</option>
+<option value="2">Madrid</option>
+<option value="3">Rome</option>
+<option value="4">London GMT</option>
+<option value="5">Rome</option>
+<option value="6">Portugal</option>
+<option value="7">Bangkok</option>
+<option value="8">Scotland</option>
+<option value="9">Tokyo</option> 
+<option value="10">Sydney</option>
+<option value="11">India</option>
+<option value="12">Fiji</option>
+<option value="13">New York</option>
+<option value="-10">Hawaii</option>
+<option value="-8">San Francisco</option> 
+<option value="-5">Beijing</option>
+<option value="-3">Buenos Aires</option>
+</select>
+
+</td>
+  </tr>
+  <tr>
+    <td width="120%">
+<script>
+
+
+
+if (document.all||document.getElementById)
+document.write('<span id="ClockOfTheWorld" style=" 18px ;"></span><br />')
+
+zone=0;
+<!----when the local time is selected--->
+isitlocal=true;
+ampm='';
+
+function updateclock(z){
+<!--------The function updateclock is also used above in simple html code>
+zone=z.options[z.selectedIndex].value;
+<!---z is for the time zone--->
+
+isitlocal=(z.options[0].selected)?true:false;
+<!----to check for the local time>
+}
+
+
+function WorldClock(){
+
+now=new Date();
+<!---to display the time in digital>
+ofst=now.getTimezoneOffset()/60;
+<!--to get the time zone for the offset of function>
+secs=now.getSeconds();
+<!---to get the current seconds-->
+sec=-1.57+Math.PI*secs/30;
+mins=now.getMinutes();
+<!---to get the current minutes>
+min=-1.57+Math.PI*mins/30;
+hr=(isitlocal)?now.getHours():(now.getHours() + parseInt(ofst)) + parseInt(zone);
+hrs=-1.575+Math.PI*hr/6+Math.PI*parseInt(now.getMinutes())/360;
+if (hr < 0) hr+=24;
+if (hr > 23) hr-=24;
+<!---decision making for am & pm>
+ampm = (hr > 11)?"PM":"AM";
+
+statusampm = ampm.toLowerCase();
+
+hr2 = hr;
+if (hr2 == 0) hr2=12;
+(hr2 < 13)?hr2:hr2 %= 12;
+if (hr2<10) hr2="0"+hr2
+
+var ClockFT=hr2+':'+((mins < 10)?"0"+mins:mins)+':'+((secs < 10)?"0"+secs:secs)+' '+statusampm;
+
+if (document.all)
+ClockOfTheWorld.innerHTML=ClockFT       <!----FT: Final Time--->
+else if (document.getElementById)
+document.getElementById("ClockOfTheWorld").innerHTML=ClockFT
+else if (document.layers){
+document.worldclockns.document.worldclockns2.document.write(ClockFT)
+document.worldclockns.document.worldclockns2.document.close()
+}
+
+
+setTimeout('WorldClock()',1000);
+}
+
+window.onload=WorldClock
+
+
+
+var clock_canvas = document.getElementById("clock_canvas");
+setInterval(ClockBody, 1000);
+var assig = clock_canvas.getContext("2d");
+var clock_rad = clock_canvas.height / 2;
+assig.translate(clock_rad, clock_rad);
+clock_rad = clock_rad * 0.89
+
+
+function ClockBody() {
+  ClockFace(assig, clock_rad);
+  ClockNumbers(assig, clock_rad);
+  drawTime(assig, clock_rad);
+}
+
+function ClockFace(assig, clock_rad) {
+  var clock_gradient;
+  <!----The beginPath() method begins a path, or resets the current path.---->
+  assig.beginPath();
+  assig.arc(0, 0, clock_rad, 0, 2*Math.PI);
+  assig.fillStyle = '#D98880';
+  assig.fill();
+  clock_gradient = assig.createRadialGradient(0,0,clock_rad*0.95, 0,0,clock_rad*1.05);
+  clock_gradient.addColorStop(0.1, '#943126');
+  clock_gradient.addColorStop(0.6, '#D98880');
+  clock_gradient.addColorStop(0.5, '#C0392B');
+  assig.strokeStyle = clock_gradient;
+  assig.lineWidth = clock_rad*0.09;
+  assig.stroke();
+  assig.beginPath();
+  assig.arc(0, 0, clock_rad*0.1, 0, 2*Math.PI);
+  assig.fillStyle = '#333';
+  assig.fill();
+}
+
+function ClockNumbers(assig, clock_rad) {
+  var analogue;
+  var number;
+  assig.textAlign="center";
+  assig.font = clock_rad*0.144 + "px arial";
+  assig.textBaseline="middle";
+  
+  for(number = 1; number < 13; number++){
+    analogue = number * Math.PI / 6;
+    assig.rotate(analogue);
+    assig.translate(0, -clock_rad*0.85);
+    assig.rotate(-analogue);
+    assig.fillText(number.toString(), 0, 0);
+    assig.rotate(analogue);
+    assig.translate(0, clock_rad*0.85);
+    assig.rotate(-analogue);
+  }
+}
+
+function drawTime(assig, clock_rad){
+    var currently = new Date();
+    var Clockhour = currently.getHours();
+    var Clockminute = currently.getMinutes();
+    var clocksecond = currently.getSeconds();
+    //Hours of the clock
+    Clockhour=Clockhour%12;
+    Clockhour=(Clockhour*Math.PI/6)+
+    (Clockminute*Math.PI/(6*60))+
+    (clocksecond*Math.PI/(360*60));
+    ClockHand(assig, Clockhour, clock_rad*0.5, clock_rad*0.07);
+    //minutes of the clock
+    Clockminute=(Clockminute*Math.PI/30)+(clocksecond*Math.PI/(30*60));
+    ClockHand(assig, Clockminute, clock_rad*0.8, clock_rad*0.07);
+    // seconds of the clock
+    clocksecond=(clocksecond*Math.PI/30);
+    ClockHand(assig, clocksecond, clock_rad*0.9, clock_rad*0.02);
+}
+
+function ClockHand(assig, position, length, width) {
+    assig.beginPath();
+    assig.lineWidth = width;
+    
+    assig.moveTo(0,0);
+    assig.rotate(position);
+    assig.lineTo(0, -length);
+    assig.stroke();
+    assig.rotate(-position);
+}
+</script>
+
+
+
+</td>
+</form>
+  </tr>
+</table>
+</body>
+</html>
