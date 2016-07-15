@@ -1,0 +1,104 @@
+body {
+	width:959.9px;
+	
+	background-color:#f9ebe8
+	}
+	
+
+/*attribute setting of the buttons*/
+button{
+	width:250px; 
+		margin-left:19.99px;
+	color:#9405D2; 
+	height:44px; 
+	margin-bottom:19.99px; 
+
+	}
+		/*styling for the form center*/
+form{
+	width:350px; 
+	margin:9.99px 179.99px;
+	
+	
+	}
+	/*styling for the input fields*/
+input{
+	
+	
+	padding:4.99px;
+	width:279.99px;
+	margin:20px 0 10px 0;
+	height:39.99px;
+	
+	}
+	
+	
+	
+
+/*styling for the form header*/
+.FormHeader p{
+  	
+	color:#D3CDD5;
+	padding:20px;
+}
+/*styling for submit button*/
+	
+input[type = submit]{
+	
+	background-color:#805095  ;
+	
+	
+	color:#D3CDD5  ;
+	width:120px;
+}	
+
+/*Styling for the buttons of form*/
+
+.FormButtons{
+	
+	float:left;
+	background-color:#D3CDD5;
+	height:599px;
+	
+	width:290.5px;
+	}
+	
+/*Styling for form buttons*/
+.FormButtons h4{
+	color:#928A96  ; 
+	text-align:center;
+	}
+	
+	/*Styling for the form content*/
+
+.FormContent{
+	background-color:#CCC6CF;
+	width:955px;
+
+	  
+	
+	}
+	
+/* styling of the form display */
+
+ .FinalForm{
+	text-align:center;
+	width:660px;
+	
+	/*The float property specifies whether or not a box (an element) should float.*/
+	float:left;
+	background-color:#CCC6CF  ;
+	
+	} 
+	
+/* styling for header*/
+ .FormHeader{
+	height:60px;
+	
+	background-color:#5A2E6D 	; 
+	width:1500px; 
+	
+	
+	} 
+
+
