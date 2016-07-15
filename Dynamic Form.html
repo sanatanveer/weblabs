@@ -1,0 +1,178 @@
+<html>
+<head>
+<title>Web Lab 4</title>
+<!---Link for css file-->
+<link rel="stylesheet" type="text/css" href="styling.css">
+
+
+
+</head>
+<body>
+<div class ="FormContent">
+ <!-- 
+DIV for Form Header!
+-->
+<div class="FormHeader"><p> LAB-04: Dynamic Form </p></div>
+
+<!--
+DIV for Form Buttons!
+-->
+
+<div class="FormButtons">
+<h3>Available Fields For the Form!</h3><br>
+<button onclick="FunctionForName()">Name</button><br>
+<button onclick="FunctionForEmail()">Email</button><br>
+<button onclick="FunctionForContact()">Contact</button><br>
+<button onclick="FunctionForText()">Message</button><br>
+<button onclick="resetElements()">Reset</button><br>
+</div>
+<!-- 
+For the final display of the form!
+-->
+
+<div class="FinalForm">
+<h1>Choose the required Form Fields!!</h1>
+<form action="#" method="get" id="D_Form">
+<span id="DynamicForm">
+</span>
+<p></p><br></br>
+<input type="submit" value="Submit Now!"></input>
+</form>
+</div>
+ <!-- 
+----------------------------------------------------------------------------------------
+End of Form!
+----------------------------------------------------------------------------------------
+-->
+
+</div>
+<script>
+/* setting our global variable GV*/
+
+var GV=0; 
+
+function increment(){
+GV +=1;                         /* function to cause an automatic increase in the field "name" */                 
+}
+
+
+
+
+
+ /* 
+ on click function calls for name
+ 
+ 
+ */
+function FunctionForName()
+{
+var ss=document.createElement('span');
+/* variable for creating span*/
+var y = document.createElement("INPUT");
+/* variable for creating input space*/
+y.setAttribute("type", "text");
+y.setAttribute("placeholder","Name");
+var g = document.createElement("IMG");
+g.setAttribute("src", "image.png");
+increment(); 
+y.setAttribute("Name","textelement_"+GV);
+ss.appendChild(y);
+g.setAttribute("onclick", "R_Element('DynamicForm','id_"+ GV +"')");
+ss.appendChild(g);
+ss.setAttribute("id", "id_"+GV);
+document.getElementById("DynamicForm").appendChild(ss);
+}
+
+
+/*
+
+on click functions for email
+
+*/
+function FunctionForEmail()
+{
+var ss=document.createElement('span');
+/* variable for creating span*/
+var y = document.createElement("INPUT");
+/* variable for creating input space*/
+y.setAttribute("type", "text");
+y.setAttribute("placeholder", "Email");
+var g = document.createElement("IMG");
+g.setAttribute("src", "image.png");
+increment();
+y.setAttribute("Name","textelement_"+GV);
+ss.appendChild(y);
+g.setAttribute("onclick", "R_Element('DynamicForm','id_"+ GV +"')");
+ss.appendChild(g);
+ss.setAttribute("id", "id_"+GV);
+document.getElementById("DynamicForm").appendChild(ss);
+}
+
+/*
+
+on click functions for contact
+
+*/
+
+function FunctionForContact()
+{
+var ss=document.createElement('span');
+/* variable for creating span*/
+var y = document.createElement("INPUT");
+/* variable for creating input space*/
+y.setAttribute("type", "text");
+y.setAttribute("placeholder", "Contact");
+var g = document.createElement("IMG");
+g.setAttribute("src", "image.png");
+increment();
+y.setAttribute("Name","textelement_"+GV);
+ss.appendChild(y);
+g.setAttribute("onclick", "R_Element('DynamicForm','id_"+ GV +"')");
+ss.appendChild(g);
+ss.setAttribute("id", "id_"+GV);
+document.getElementById("DynamicForm").appendChild(ss);
+}
+
+/*
+-----------------------------------------------------------------------------
+
+on click function for message
+
+------------------------------------------------------------------------------
+*/
+
+function FunctionForText()
+{
+var ss=document.createElement('span');
+/* variable for creating span*/
+var y = document.createElement("TEXTAREA");
+/* variable for creating input space*/
+var g = document.createElement("IMG");
+y.setAttribute("cols", "17");
+y.setAttribute("placeholder", "message..");
+g.setAttribute("src", "image.png");
+increment();
+y.setAttribute("Name","textelement_"+GV);
+ss.appendChild(y);
+g.setAttribute("onclick", "R_Element('DynamicForm','id_"+ GV +"')");
+ss.appendChild(g);
+ss.setAttribute("id", "id_"+GV);
+document.getElementById("DynamicForm").appendChild(ss);
+
+}
+
+/*
+-----------------------------------------------------------------------------
+
+functions  that will be called upon, when user click on the Reset Button
+
+------------------------------------------------------------------------------
+*/
+function resetElements(){
+document.getElementById('DynamicForm').innerHTML = '';
+}
+
+</script>
+
+</body>
+</html>
