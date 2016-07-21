@@ -1,0 +1,71 @@
+
+<html>
+<head>
+    <title>Simple Game</title>
+  <!---Background color styling--->
+  <style>
+body {
+    background-color: pink;
+}
+</style>
+<!---Javascript starts here--->
+    <script>
+        <!---The different functions are defined and called here-->
+        var move_ball;
+        function ViewImage() {
+            canvas = document.getElementById("Canvas_ID");
+			<!----the if condition for the ball--->
+            if (canvas.getContext) {
+                move_ball = canvas.getContext("2d");
+                window.addEventListener('keydown', moveobj, true);
+ 
+
+   
+  <!----code for making the body of the ball--->
+  
+  move_ball.beginPath();
+  var game_obj = move_ball.createRadialGradient(55, 185, 7, 55,185, 20);
+ 
+  game_obj.addColorStop(1, '#680CA6');
+                move_ball.arc(50, 180, 15,0, 2 * Math.PI, true);
+                move_ball.fillStyle = game_obj;
+                move_ball.fill();
+   
+                move_ball.beginPath();
+  
+            }
+        }
+ 
+        var old = new Image();
+        var next = 0;
+        function moveobj(evt) {
+            move_ball.fillStyle = "#ffffff";
+            move_ball.rect(3, 5, 600, 350);
+            move_ball.fill();
+            switch (evt.keyCode) {
+                case 37:
+                    move_ball.restore();
+                    ViewImage();
+                    break;
+                case 39:
+                    move_ball.save();
+                    move_ball.translate(5, 0);
+                    ViewImage();
+                    break;
+            }
+        }
+		<!----function for clicking the button displayed on the screen--->
+        function ClickTheButton() {
+            document.getElementById("span").innerHTML = "The color of the div will be changed. You can move the ball forward and backward using the arrow keys..";
+        }
+       </script>
+	   
+  </head>
+  <!--- on;oad event in HTML-->
+    <body onload="ViewImage()">
+	<!---Button to start the game-->
+<input id="Game_Button" type="button" value="Let's Starts!" align="center" onclick="ClickTheButton();">
+<span id="span"></span><br><br>
+       <canvas id="Canvas_ID" width="600px" height="330px">
+    </canvas>
+</body></html>
