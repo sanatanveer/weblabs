@@ -1,0 +1,86 @@
+#include<iostream>
+#include<conio.h>
+#include<stdio.h>
+
+using namespace std;
+int main()
+{
+	int x[12][12], y[12][12], z[12][12];
+	int a, b, i, j, m, n;
+
+	cout << "\n\b----------Enter the no.of rows & colums for the first matrix A--------\n\b";
+	cin >> a >> b;
+
+
+	cout << "\n-------Please input the elements for firts matrix A----------\n\n";
+	for (i = 0; i < a; i++)   //nested for loop for taking the input
+	{
+		for (j = 0; j < b; j++)
+		{
+			cin >> x[i][j];      //input statement
+		}
+		cout << "\n";
+	}
+	cout << "\n\n ----------Elements of firts matrix A -----------\n\n";
+	for (i = 0; i < a; i++)
+	{
+		for (j = 0; j < b; j++)
+		{
+			cout << "\t" << x[i][j];    //output statement
+		}
+		cout << "\n\n";
+	}
+
+	cout << "-------------Enter the no.of rows & colums for the first matrix B--------------\n\n";
+	cin >> m >> n;
+	
+
+	cout << "\n\n-------------Please input the elements for second matrix B------------\n\n";
+	for (i = 0; i < m; i++)
+	{
+		for (j = 0; j < n; j++)
+		{
+			cin >> y[i][j];
+		}
+		cout << "\n";
+	}
+	cout << "\n ------------------Elements of second matrix B ----------------------\n\n";
+	for (i = 0; i < m; i++)
+	{
+		for (j = 0; j < n; j++)
+		{
+			cout << "\t" << y[i][j];
+		}
+		cout << "\n\n";
+	}
+	if (b == m)
+	{
+		for (i = 0; i < a; i++)
+		{
+			for (j = 0; j < n; j++)
+			{
+				z[i][j] = 0;
+				for (int k = 0; k < m; k++)
+				{
+					z[i][j] = z[i][j] + x[i][k] * y[k][j];
+				}
+			}
+		}
+
+		cout << "\n---------A x B Matrix----------\n\n";
+		for (i = 0; i < a; i++)
+		{
+			for (j = 0; j < n; j++)
+			{
+				cout << "\t" << z[i][j];
+			}
+			cout << "\n\n";
+		}
+	}
+	else
+	{
+		cout << "\n\ Error: Multiplication cannot be proceeded";
+	}
+	_getch();
+
+}
