@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<iostream>
+#include<conio.h>
+
+using namespace std;
+void Main(){
+	int x[2][2], y[2][2], z[2][2], i, j;
+	int mat1, mat2, mat3, mat4, mat5, mat6, mat7;
+
+	printf("Please input four elements for Matrix A ");
+	for (i = 0; i<2; i++)
+	for (j = 0; j<2; j++)
+		scanf_s("%d", &x[i][j]);
+
+	printf("Enter the 4 elements of second matrix: ");
+	for (i = 0; i<2; i++)
+	for (j = 0; j<2; j++)
+		scanf_s("%d", &y[i][j]);
+
+	printf("\nThe first matrix is\n");
+	for (i = 0; i<2; i++){
+		printf("\n");
+		for (j = 0; j<2; j++)
+			printf("%d\t", x[i][j]);
+	}
+
+	printf("\nThe second matrix is\n");
+	for (i = 0; i<2; i++){
+		printf("\n");
+		for (j = 0; j<2; j++)
+			printf("%d\t", y[i][j]);
+	}
+
+	mat1 = (x[0][0] + x[1][1])*(y[0][0] + y[1][1]);
+	mat2 = (x[1][0] + x[1][1])*y[0][0];
+	mat3 = x[0][0] * (y[0][1] - y[1][1]);
+	mat4 = x[1][1] * (y[1][0] - y[0][0]);
+	mat5 = (x[0][0] + x[0][1])*x[1][1];
+	mat6 = (x[1][0] - x[0][0])*(y[0][0] + y[0][1]);
+	mat7 = (x[0][1] - x[1][1])*(y[1][0] + y[1][1]);
+
+	z[0][0] = mat1 + mat4 - mat5 + mat7;
+	z[0][1] = mat3 + mat5;
+	z[1][0] = mat2 + mat4;
+	z[1][1] = mat1 - mat2 + mat3 + mat6;
+
+	printf("\nAfter multiplication using \n");
+	for (i = 0; i<2; i++){
+		printf("\n");
+		for (j = 0; j<2; j++)
+			printf("%d\t", z[i][j]);
+	}
+	_getch();
+
+}
